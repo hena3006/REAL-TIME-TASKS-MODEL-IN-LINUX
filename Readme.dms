@@ -1,0 +1,55 @@
+NAME: CSE522 Assignment 1
+_______________________________________________________________________________________________________________________________________________________________________________________________________
+
+TEAM-02
+ 
+Hena Shah (1213348511)
+Nidhi Dubey(1213031246)
+_______________________________________________________________________________________________________________________________________________________________________________________________________
+
+REPOSITORY CONTENTS:
+
+-> README 
+-> main.c(test program)
+-> Report
+-> test.txt (input file)
+_______________________________________________________________________________________________________________________________________________________________________________________________________
+
+ABOUT: 
+
+
+In this code we have programmed real-time tasks on Linux environment, including periodic and aporadic tasks, event handling, priority inheritance.
+As per the instructions given in the assignment guidelines pdf, the input file will follow the below pattern:
+
+<task_body> ::= <compute> { < CS> <compute> }
+<CS> ::= <lock_m> <compute> {<CS> <compute>} <unlock_m >
+
+which means that there will be always a mutex lock/unlock between two consecutive computations. This pattern is also followed by the sample input file given in the pdf.
+So following this pattern, we have interpreted our code in a way that computations and lock/unlock will always be alternate ( computations at even postions and mutex at odd positions in our task body).
+We have also attached a sample input file which is in accordance with the guidelines and input file in the question. You may also use your input file which follows the same pattern.
+
+We have developed this program for both PI enabled and PI disabled case. The code asks the user to input the choice and on the basis of the input program runs. 
+Change the mouse event ( At line 29) and the input file name ( At line 320) if required. Change task size if reuired (at line 28).
+
+	
+_______________________________________________________________________________________________________________________________________________________________________________________________________
+
+COMPILATION:
+
+-> type sudo screen /dev/ttyUSB0 115200 to communicate with board.
+-> Set the IP address for the board
+-> On the host, open directory in terminal in which files are present and compile main file. Type make TARGET=Galileo 
+-> Copy the input file and executable file to the board
+
+On Host 
+
+-> On the host, open directory in terminal in which files are present and compile main file. Type make to compile
+-> Run the eecutable file.
+_______________________________________________________________________________________________________________________________________________________________________________________________________
+
+EXECUTION:
+
+->type ./main to run the code
+_______________________________________________________________________________________________________________________________________________________________________________________________________
+
+
